@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cat-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cat-backend
+  template:
+    metadata:
+      labels:
+        app: cat-backend
+    spec:
+      containers:
+        - name: cat-backend
+          image: trialmse12e.jfrog.io/docker-trial/cat-backend:latest
+          ports:
+            - containerPort: 8123
+          envFrom:
+            - configMapRef:
+                name: cat-backend-config
+            - secretRef:
+                name: cat-backend-secret
+          readinessProbe:
+            httpGet:
+              path: /actuator/health
+              port: 8123
+            initialDelaySeconds: 20
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /actuator/health
+              port: 8123
+            initialDelaySeconds: 40
+            periodSeconds: 15
