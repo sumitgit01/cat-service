@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: cat-backend
-          image: trialmse12e.jfrog.io/docker-trial/cat-backend:latest
+          image: trialcpnyac.jfrog.io/cat-docker/cat-service/0.0.1-SNAPSHOT/
           ports:
             - containerPort: 8123
           envFrom:

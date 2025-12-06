@@ -4,4 +4,3 @@ metadata:
   name: cat-backend-config
 data:
   SERVER_PORT: "8123"
-
