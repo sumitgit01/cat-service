@@ -1,5 +1,6 @@
 #!/bin/bash
 set -e
+mvn clean install -DskipTests=true
 
 app_name=$(xmllint --xpath "/*[local-name()='project']/*[local-name()='artifactId']/text()" pom.xml)
 version=$(xmllint --xpath "/*[local-name()='project']/*[local-name()='version']/text()" pom.xml)
