@@ -1,13 +1,10 @@
-FROM openjdk:21-jdk-slim
+FROM openjdk:21-slim
 
-# Set working directory
 WORKDIR /app
 
-# Copy JAR file
-COPY target/*.jar .
+COPY target/*.jar app.jar
 
-# Expose HTTPS port
 EXPOSE 8123
 
-# Run the Spring Boot app
-CMD ["java", "-jar", "*.jar"]
+ENTRYPOINT ["java", "-jar", "app.jar"]
+
