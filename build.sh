@@ -26,3 +26,4 @@ echo "uploaded ${JAR_FILE} and manifestbuild.zip to ${ART_URL}/${REPO}/${app_nam
 #to uoload helm chart to helm repo in Jfrog
 tar -cvzf manifestbuild.tgz manifestbuild/
 helm push manifestbuild.tgz oci://trialcpnyac.jfrog.io/cat-service-helm
+
