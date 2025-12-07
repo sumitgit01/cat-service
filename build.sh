@@ -22,3 +22,7 @@ curl -u "${ART_USER}:${ART_API_KEY}" -T "${JAR_FILE}" "${ART_URL}/${REPO}/${app_
 curl -u "${ART_USER}:${ART_API_KEY}" -T manifestbuild.zip "${ART_URL}/${REPO}/${app_name}/${version}/manifestbuild.zip"
 
 echo "uploaded ${JAR_FILE} and manifestbuild.zip to ${ART_URL}/${REPO}/${app_name}/${version}/"
+
+#to uoload helm chart to helm repo in Jfrog
+tar -cvzf manifestbuild.tgz manifestbuild/
+helm push manifestbuild.tgz oci://trialcpnyac.jfrog.io/cat-service-helm
