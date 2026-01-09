@@ -7,7 +7,7 @@ pipeline{
                 // Add build steps here
             }
         }
-        stage{'Unit Test'}{
+        stage('Unit Test'){
             steps{
                 echo 'Running Unit Tests for Cat Service...'
                 // Add unit test steps here
