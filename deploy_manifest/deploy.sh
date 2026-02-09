@@ -14,4 +14,10 @@
 
 ###this is to deploy via helm ####
 helm pull oci://trialcpnyac.jfrog.io/cat-service-helm/manifestbuild --version 0.1.0
-helm upgrade --install --history-max=1 --namespace default -f cat-sit/values_cat-sit.yaml .
+#helm upgrade --install --history-max=1 --namespace default -f cat-sit/values_cat-sit.yaml .
+
+helm upgrade --install cat-service-release \
+--history-max=1 \
+--namespace default \
+-f cat-sit/values_cat-sit.yaml \
+.
