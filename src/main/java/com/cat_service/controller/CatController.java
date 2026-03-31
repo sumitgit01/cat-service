@@ -8,7 +8,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/cats")
-@CrossOrigin(origins = "http://localhost:3000") // allow frontend access
+@CrossOrigin(origins = "*") // allow frontend access
 public class CatController {
 
     private final CatRepository catRepository;
@@ -22,7 +22,7 @@ public class CatController {
         return catRepository.save(cat);
     }
 
-    @GetMapping
+    @GetMapping("/getcats")
     public List<Cat> getAllCats() {
         return catRepository.findAll();
     }
