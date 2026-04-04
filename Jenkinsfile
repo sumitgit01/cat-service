@@ -5,5 +5,6 @@ build(
     sonarProjectKey: 'cat-service',
     sonarSources: 'src/main/java',
     nexusPort: '8084',
-    repoName: 'cat-service'
+    repoName: 'cat-service',
+    helmRepoName: 'cat-service-helm'
 )
