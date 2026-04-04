@@ -7,5 +7,5 @@ build(
     nexusPort: '8084',
     repoName: 'cat-service',
     helmRepoName: 'cat-service-helm',
-    helmPort: 8081
+    helmPort: '8081'
 )
